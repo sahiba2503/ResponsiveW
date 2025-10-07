@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* border:12px solid black; */
+    margin:0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #23E3c9;
+
+}
+.slider{
+    /* border:2px solid red; */
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+.slides{
+      /* border:5px solid green; */
+    width: 400%;
+    height: 100%;
+    display: flex;
+}
+.slides input{
+    display: none;
+}
+.slide {
+    width: 25%;
+    transition: 2s;
+}
+.slide img{
+    width: 800px;
+    height: 500px;
+}
+.navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+.manual-btn{
+    /* border: 3px solid red; */
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+.manual-btn:hover{
+    background: #23E3c9;
+}
+/* }
+#radio1:checked ~ .slides{
+    margin-left: 0;
+}
+#radio2:checked ~ .slides{
+    margin-left: -25%;
+}
+#radio3:checked ~ .slides{
+    margin-left: -50%;
+}
+#radio4:checked ~ .slides{
+    margin-left: -75%;
+}
+    /* always scroll image dive so here outer div is not working. */
+ #radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}

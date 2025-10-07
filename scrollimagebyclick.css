@@ -28,7 +28,7 @@
     display: flex;
 }
 
-.images img{
+.images .image{
     width: 25%;
     height: 400px;
     transform: all 0.15s ease;
@@ -57,20 +57,20 @@ margin: 5px;
 .dots label:hover{
     background-color: greenyellow;
 }
-#img1:checked ~ .m1 {
+#img1:checked ~ .first{
     margin-left: 0; 
     
 
 }
-#img2:checked ~ .m2 {
+#img2:checked ~ .first{
     margin-left: -20%;
 
 }
-#img3:checked ~ .m3 {
+#img3:checked ~ .first{
     margin-left: -50%;
 
 }
-#img4:checked ~ .m4 {
+#img4:checked ~ .first{
     margin-left: -75%;
 
 }
