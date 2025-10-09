@@ -1,0 +1,127 @@
+.slider-container,.slider-container2{
+    /* border: 7px solid green; */
+    width: 100%;
+       overflow: hidden;
+   position: relative;
+   height: 310px;    
+        }
+ .slider,.slider2{
+    /* border: 2px solid blue; */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  
+}
+
+.slide,.slide2{
+  /* border: 2px solid green; */
+  flex: 0 0 100%;
+    height: 510px;
+    background-size: cover;
+    background-position: center;
+   
+} 
+.slide2{
+    /* border:2px solid red; */
+    display: flex;
+}
+.slider-controls,.slider-controls2{
+    position:absolute;
+    /* border:2px solid yellow; */
+    width: 100%;
+    top:0%;
+    left:0%;
+    display: flex;
+    justify-content: space-between;
+
+   
+   
+}
+.nextBtn,
+.prevBtn,.prevBtn2,.nextBtn2{
+     border: none;
+   width: 70px;
+   height: 310px;
+   font-size: 35px;
+   background-color: transparent;
+   
+}
+.nextBtn:hover,
+.prevBtn:hover,.nextBtn2:hover,.prevBtn2:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+   border: 3px solid navy;
+   
+   
+   
+}
+
+
+.slide.active,.slide2.active{
+    transform: translateX(0);
+}
+.first-image-slider2{
+    border:0.5px solid gray;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.border-body-product{
+    /* border:2px solid red; */
+    width: 100%;
+    background-color: #d5dbdb;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+  
+  
+    
+}
+.item-box-size{
+    /* border:0.2px solid blue; */
+    width: 20%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 20px;
+}
+.item-box-size h1{
+  font-size: 23px;
+  
+}
+.item-outsid-border{
+    /* border:2px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+margin-bottom: 30px;
+
+
+}
+
+
+.item-small-box{
+    /* border:2px solid green; */
+    width: 45%;
+    height: 130px;
+    padding-top: 17px;
+}
+.item-small-box:hover{
+    width: 47%;
+    
+}
+.item-small-box p{
+    font-size: 13px;
+}
+.item-box-size a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 550;
+    
+}
