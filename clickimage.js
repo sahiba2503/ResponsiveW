@@ -1,4 +1,4 @@
-const slider2=document.querySelector('.slider2');
+const slider=document.querySelector('.slider');
     const slide2=document.querySelectorAll('.slide2');// here we are taking about images.
     const prevbtn2=document.querySelector('.prevbtn2');
     const nextbtn2=document.querySelector('.nextbtn2');
@@ -20,7 +20,7 @@ const slider2=document.querySelector('.slider2');
             //else{ ind++;}
          //this is same as above code.
         slide2[ind].classList.add('active2');
-        slider2.style.transform = `translateX(-${ind * 100}%)`;
+        slider.style.transform = `translateX(-${ind * 100}%)`;
     }
 
        function prevslide2(){
@@ -32,5 +32,5 @@ const slider2=document.querySelector('.slider2');
         // else{ ind--;}
         //this is same as above code.
         slide2[ind].classList.add('active2');
-        slider2.style.transform = `translateX(-${ind * 100}%)`;
+        slider.style.transform = `translateX(-${ind * 100}%)`;
     }
