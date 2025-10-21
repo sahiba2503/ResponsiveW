@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .outer{
+            width: 190px;
+            height: 200px;
+            border: 5px solid black;
+            /* overflow: hidden; */
+           
+           
+        }
+        .boxs{
+              border: 5px solid red;
+            width: 700px;
+            height: 100%;
+            background-color: lightgray;
+            display: flex;
+           
+           
+        }
+        .single{
+            /* display: inline-block; */
+             border: 5px solid green;
+            width: 170px;
+            height: 200px;           
+            background-color: coral;
+            text-align: center;
+            line-height: 150px;
+            font-size: 24px;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .right{
+          border:2px solid blue;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            color:white;
+            background-color: black;
+            padding: 10px;
+           
+        }
+        .left{
+          border:2px solid blue;
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            color:white;
+            background-color: black;
+            padding: 10px;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="boxs">
+            <div class="single">a</div>
+            <div class="single">b</div>
+            <div class="single">c</div>
+            <div class="single">d</div>
+        </div>
+    </div>
+    <div class="right">right</div>
+    <div class="left">left</div>
+
+    <script>
+ document.querySelector('.right').onclick = myfun;
+ var num=1;
+ function myfun(){
+    if(num<=3){
+    document.querySelectorAll('.single')[0].style.marginLeft = (num*-170)+'px';
+    num++;
+    }else{  
+        num=1;
+        document.querySelectorAll('.single')[0].style.marginLeft = '0px';
+     }
+}
+ 
+
+    </script>
+    
+</body>
+</html>
