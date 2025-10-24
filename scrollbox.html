@@ -76,9 +76,12 @@
     <div class="left">left</div>
 
     <script>
- document.querySelector('.right').onclick = myfun;
+ document.querySelector('.right').onclick = myfunright;
+ document.querySelector('.left').onclick = myfunleft;
+ var len = document.querySelectorAll('.single').length;
+
  var num=1;
- function myfun(){
+ function myfunright(){
     if(num<=3){
     document.querySelectorAll('.single')[0].style.marginLeft = (num*-170)+'px';
     num++;
@@ -87,9 +90,19 @@
         document.querySelectorAll('.single')[0].style.marginLeft = '0px';
      }
 }
- 
+function myfunleft(){
+    if(num>1){
+    num--;
+    document.querySelectorAll('.single')[0].style.marginLeft = (num*-170)+'px';
 
-    </script>
+    }
     
-</body>
+        else{  
+        num=4;
+        document.querySelectorAll('.single')[0].style.marginLeft = '-510px';
+     }
+}
+
+</script>
+</body>    
 </html>
