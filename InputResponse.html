@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 75px;
+        }
+        .outside-box{
+         border:2px solid black;
+         width: 400px;    
+         background-color:rgb(194, 236, 194);
+        }
+        h2{
+            font-size: 50px;
+            text-align: center;
+            margin-top: 100px;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+            margin-left: 150px;
+            margin-top: 20px;
+            background-color: rgb(248, 5, 5);
+            color:white;
+        }
+       ol li{
+        list-style-type: none;       
+        background-color: white;
+        border:1px solid black;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 5px;
+        padding-bottom: 5px;
+       }
+         /* .more-icon{         
+          background-image: url('https://cdn-icons-png.flaticon.com/512/1828/1828843.png');
+          padding-left: 5px;
+          background-size: 20px;
+          background-repeat: no-repeat;
+          background-position: right;
+         } */
+        
+    </style>
+</head>
+<body>
+    <div class="outside-box" >
+    <h2>search section</h2>
+    <input type="text" placeholder="Enter items"  style="width: 90%; height: 40px; font-size: 20px;  margin-left: 5%;"  >        
+    <button>Click</button>
+    <ol>
+        <li class="more-icon">welcome </span></li>
+
+    </ol>
+    </div>
+    <script>
+        const inputBox = document.querySelector("input");
+        const button = document.querySelector("button"); 
+                     
+                      button.addEventListener("click", function(){         
+                     var listitem = document.createElement("li");
+                      listitem.innerText = inputBox.value;
+                      listitem.classList.add("more-icon");
+                        document.querySelector("ol").appendChild(listitem);
+                        inputBox.value = " ";
+
+        });
+       
+
+    </script>
+
+
+</body>
+</html>
