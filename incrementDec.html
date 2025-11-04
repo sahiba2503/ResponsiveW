@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        border:2px solid black;
+        background-color:black;      
+       padding: 250px 0px;
+       color:white;
+        
+      
+    }
+    .lab{
+        display: block;
+        text-align: center;
+         font-size: 70px;
+            margin-bottom: 50px;
+    }
+  .left{
+    margin-left: 19%;
+  }
+   .right{
+   margin-left: 17%;
+  }
+  button{
+    font-size: 30px;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+  }
+
+</style>
+<body>
+    
+    
+    <div class="lab">0</div>
+    <button class="left"> Left Click</button>
+    <button class="right"> Right Click</button>
+
+<script>
+    var rightbtn = document.querySelector(".right");
+    var leftbtn = document.querySelector(".left");
+    var labitem = document.querySelector(".lab");
+    var count = 0;
+    rightbtn.addEventListener("click", function(){
+        if(count < 20){
+        count++;
+        labitem.innerText = count;
+        }
+    });
+    leftbtn.addEventListener("click", function(){
+        if(count >= 1){
+        count--;
+        labitem.innerText = count;
+        }
+    });
+</script>
+
+</body>
+</html>
