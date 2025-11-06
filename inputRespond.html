@@ -28,7 +28,7 @@
         .outside-box{
          border:2px solid black;
          width: 400px;    
-         background-color:rgb(194, 236, 194);
+         background-color:greenyellow;
         }
         h2{
             font-size: 50px;
@@ -58,35 +58,44 @@
     <h2>search section</h2>
     <input type="text" placeholder="Enter items"  style="width: 90%; height: 40px; font-size: 20px;  margin-left: 5%;"  >        
     <button>Click</button>
-    <ol></ol>
+    <ol> </ol>
     </div>
 <script>
     const inputBox = document.querySelector("input");
       const button = document.querySelector("button");
       button.addEventListener("click", clickfun);
+      const OL = document.getElementsByTagName("ol");
        summitValue = 1;
+       test = [];
 
       function clickfun() {
-        var listitem = document.createElement("li");
-        listitem.innerText = inputBox.value;
-        listitem.insertAdjacentHTML("beforeend",`<a class="deletebtn" style="float:right;"><i class="fa-solid fa-trash"></i></a> <a class="editbtn" style="float:right; margin-right: 10px;" ><i class="fa-regular fa-eye-slash"></i></a>`);
-        document.querySelector("ol").appendChild(listitem);
+        if(inputBox.value != " " && summitValue == 1){
+        test.push(inputBox.value);
+        console.log(test);
+        var LI = document.createElement("li");
+        LI.innerText = inputBox.value;
+        LI.insertAdjacentHTML("beforeend",`<span class="deletebtn" style="float:right;"><i class="fa-solid fa-trash"></i></span> <span class="editbtn" style="float:right; margin-right: 10px;" ><i class="fa-regular fa-eye-slash"></i></span>`);
+        document.querySelector("ol").appendChild(LI);
         inputBox.value = " ";
-
-        var lenclass = document.getElementsByClassName("deletebtn").length;
-        for (let i = 0; i < lenclass; i++) {
-          var Deletebtn = document.getElementsByClassName("deletebtn")[i];
-          document
-            .getElementsByClassName("deletebtn")
-            [i].addEventListener("click", function () {
-              this.parentElement.remove();
-            });
-          document
-            .getElementsByClassName("editbtn")[i].addEventListener("click", function () {
-              inputBox.value = this.parentElement.firstChild.textContent;
-            });
         }
-      }
+
+ LI.querySelector('.deletebtn').addEventListener('click', removefuntion);
+     function removefuntion(){
+        LI.remove();
+     }
+
+     LI.querySelector('.editbtn').addEventListener('click', editfunction);
+     function editfunction(){        
+            inputBox.value = LI.innerText;                                     
+                 
+            
+             }        
+       
+     }                    
+                    
+    
+         
+    
 </script>
 </body>
 </html>
