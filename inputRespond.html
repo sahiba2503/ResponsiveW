@@ -60,15 +60,17 @@
     const addBtn = document.getElementById('addBtn');
     const list = document.getElementById('list');
     let editIndex = null;
-    let storeData = [];  
+    let storeData = []; 
+     
     addBtn.addEventListener("click",clickfuntion);
 
     function clickfuntion()
     {
-      const text = input.value.trim();
+      const text = input.value.trim();//*******************
+
       if (text === ''){
-         return alert('Please enter text');}
-      
+         return alert('Please enter text');
+        }      
       if (editIndex !== null) {
         const liItems = document.querySelectorAll('#list li');
         liItems[editIndex].querySelector('.text').textContent = text;
@@ -76,9 +78,11 @@
         console.log(storeData);
         addBtn.textContent = 'click';
         editIndex = null;
+      input.value = '';
+      updateEvents(); 
       } 
-      else {
-        // Create a new li
+      else 
+      {       
         const li = document.createElement('li');
 
         const spanText = document.createElement('span');
@@ -91,42 +95,40 @@
      icons.insertAdjacentHTML("afterbegin", '<span class=delete ><i class="fa-solid fa-trash"></i></span>');
      icons.insertAdjacentHTML("afterbegin", '<span class=edit><i class="fa-regular fa-eye-slash"></i></i></span>');
             
-           li.append(spanText,icons);
+           li.append(spanText);
+            li.append(icons);
+            //here list is a ol tag.
            list.appendChild(li);
+           //in the last we have to push item inside the array.
            storeData.push(text);
            console.log(storeData);
-      }
-     
-      input.value = '';
-      updateEvents(); // Refresh edit and delete events each time
-    };
-    // ---------- FUNCTION: UPDATE EVENTS ----------
+           input.value = '';
+          updateEvents(); // Refresh edit and delete events each time
+      }    
+          };
+   
     function updateEvents() {
       const editBtns = document.querySelectorAll('.edit');
       const deleteBtns = document.querySelectorAll('.delete');
       const liItems = document.querySelectorAll('#list li');
-
-      // ----- DELETE EVENT -----
-      deleteBtns.forEach((btn, index) => {
+     
+      deleteBtns.forEach((btn, Index) => {
       btn.onclick = function () {
-      liItems[index].remove();
-
-           if(liItems[index].querySelector(".text").textContent == input.value){
-            input.value = " ";
-            addBtn.textContent = 'click';
+      liItems[Index].remove();
+           if(liItems[Index].querySelector(".text").textContent == input.value)
+           {
+            editIndex = null;
+            addBtn.textContent = 'click';            
           }
-         
-           storeData.splice(index,1);
-           console.log(storeData);        
+           storeData.splice(index,1); //here we are deleting item from the array.
+           console.log(storeData);                   
           updateEvents(); // refresh after remove ,why not work without this function call.
         };
-      });
-
-      // ----- EDIT EVENT -----
-      editBtns.forEach((btn, index) => {
-        btn.onclick = function () {
-          input.value = liItems[index].querySelector('.text').textContent;
-          editIndex = index;
+      });     
+      editBtns.forEach((EB, IndNo) => {
+        EB.onclick = function () {
+          input.value = liItems[IndNo].querySelector('.text').textContent;
+          editIndex = IndNo;
           addBtn.textContent = 'Update';
         };
       });
