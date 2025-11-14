@@ -61,7 +61,7 @@
     const list = document.getElementById('list');
     let editIndex = null;
     let storeData = []; 
-     
+
     addBtn.addEventListener("click",clickfuntion);
 
     function clickfuntion()
@@ -97,10 +97,8 @@
             
            li.append(spanText);
             li.append(icons);
-            //here list is a ol tag.
-           list.appendChild(li);
-           //in the last we have to push item inside the array.
-           storeData.push(text);
+            list.appendChild(li);
+            storeData.push(text);
            console.log(storeData);
            input.value = '';
           updateEvents(); // Refresh edit and delete events each time
@@ -120,9 +118,9 @@
             editIndex = null;
             addBtn.textContent = 'click';            
           }
-           storeData.splice(index,1); //here we are deleting item from the array.
+           storeData.splice(index,1); 
            console.log(storeData);                   
-          updateEvents(); // refresh after remove ,why not work without this function call.
+          updateEvents(); 
         };
       });     
       editBtns.forEach((EB, IndNo) => {

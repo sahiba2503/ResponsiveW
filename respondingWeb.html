@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+  li{
+    display: flex;
+  }
+</style>
+</head>
+<body>    
+    <div class="container">
+       <input type="text" id="inputText" placeholder="Enter item...">
+    <button id="addBtn">Add</button>
+    <ol id="list"></ol>
+   </div>
+
+  <script>
+    const input = document.getElementById('inputText');
+    const addBtn = document.getElementById('addBtn');
+    const list = document.getElementById('list');
+    let editIndex = null; 
+
+
+    addBtn.addEventListener('click', () => {
+      const text = input.value.trim();
+
+      if (text === ''){
+       return alert('Please enter text');
+        }
+      
+      if (editIndex !== null){
+        const liItems = document.querySelectorAll('#list li');
+        liItems[editIndex].querySelector('.text').textContent = text;
+        addBtn.textContent = 'Add';
+        editIndex = null;   } 
+
+      else  {       
+        const li = document.createElement('li');
+
+        const spanText = document.createElement('span');
+        spanText.textContent = text;
+        spanText.className = 'text';
+
+        const icons = document.createElement('div');
+        icons.className = 'icons';
+
+        const editIcon = document.createElement('span');
+        editIcon.textContent = '✏';
+        editIcon.className = 'edit';
+
+        const deleteIcon = document.createElement('span');
+        deleteIcon.textContent = '🗑';
+        deleteIcon.className = 'delete';
+
+        icons.append(editIcon, deleteIcon);
+        li.append(spanText, icons);
+        list.appendChild(li);
+      }
+
+      input.value = '';
+      
+   
+      const editBtns = document.querySelectorAll('.edit');
+      const deleteBtns = document.querySelectorAll('.delete');
+      const liItems = document.querySelectorAll('#list li');
+
+      deleteBtns.forEach((btn, index) => {
+        btn.onclick = function ()
+         {
+          liItems[index].remove();       
+          // updateEvents(); 
+        };
+      });      
+      editBtns.forEach((btn, index) => {
+        btn.onclick = function () {
+          input.value = liItems[index].querySelector('.text').textContent;
+          editIndex = index;
+          addBtn.textContent = 'Update';
+        };
+      });
+       });
+  
+    
+  </script>
+</body>
+</html>

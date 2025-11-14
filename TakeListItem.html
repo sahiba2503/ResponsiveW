@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol li{
+            list-style: none;
+            margin: 20px 0;
+            font-size: 30px;
+            color:red;
+            cursor: pointer;
+        }
+        li .deletefun{
+            color:black;
+        }
+         li .editfun{
+            color:green;
+         }
+    </style>
+</head>
+<body>
+    <h3> You can see All list Item </h3>
+    <ol class="orderList">
+<li class="listText">text1 <span class="deletefun">x</span> <span class="editfun">#</span> </li>
+<li class="listText">text2 <span class="deletefun">x</span> <span class="editfun">#</span> </li>
+<li class="listText">text3 <span class="deletefun">x</span> <span class="editfun">#</span> </li>
+<li class="listText">text3 <span class="deletefun">x</span> <span class="editfun">#</span> </li>
+<li class="listText">text4 <span class="deletefun">x</span> <span class="editfun">#</span> </li>
+<li class="listText">text5 <span class="deletefun">x</span> <span class="editfun">#</span> </li>
+<li class="listText">text6 <span class="deletefun">x</span> <span class="editfun">#</span> </li>
+    </ol>
+    <script>
+        let Dlen = document.getElementsByClassName("deletefun").length;
+         let Elen = document.getElementsByClassName("editfun").length;
+          console.log(Dled);
+
+        for(let i=0; i<Dlen; i++){
+            var removeB = document.getElementsByClassName("deletefun")[i];
+            removeB.addEventListener("click",function(){
+                document.getElementsByClassName("listText")[i].style="dispaly:none";
+                    });
+        }
+    </script>
+</body>
+</html>

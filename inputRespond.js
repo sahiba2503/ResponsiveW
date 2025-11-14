@@ -74,4 +74,87 @@
       //         ol.appendChild(listitem);
       //     });
       // }
+      //second
+      //     const inputBox = document.getElementById("input");
+//       const button = document.getElementById("button");     
+//       const OL = document.getElementById("ollist");
+//          let clickbtntime = 1;
+//        let editindex = null;
+//        let startnum;
+//        let liarr = [];
+//       button.addEventListener("click", clickfun);
+      
+
+//       function clickfun() {
+              
+//         if(inputBox.value === "")//why not == operator.
+//         {
+//             alert("please Enter something");
+//             return; 
+//         }
+//             const editBtns = document.querySelectorAll(".edit");
+//         const deleteBtns = document.querySelectorAll(".delete");
+//          const liItems = document.querySelectorAll("#ollist li"); 
+//            if(clickbtntime !== null){         
+//                   liItems[editindex].querySelector('.text').textContent = inputBox.value.trim();
+//                     liarr.splice(editindex,1,inputBox.value);
+//                  inputBox.value = " ";
+//                   clickbtntime = 1;                 
+//                   console.log(liarr);
+//                  }       
+
+//          else {
+//           var listitem = inputBox.value;
+//           liarr.push(listitem);
+//           console.log(liarr);
+//          var li = document.createElement("li");
+//          li.className = "listitem";
+
+//           var spanText = document.createElement("span");
+//           spanText.textContent = inputBox.value;
+//           spanText.className = 'text';
+
+//            var divicon = document.createElement("div");
+//            divicon.className = 'icons';
+
+//            divicon.insertAdjacentHTML("afterbegin", '<span class=delete><i class="fa-solid fa-trash"></i></span>');
+//            divicon.insertAdjacentHTML("afterbegin", '<span class=edit><i class="fa-regular fa-eye-slash"></i></i></span>');
+            
+//            li.append(spanText,divicon);
+//            ollist.appendChild(li);
+//           inputBox.value = " ";
+//            updateEvent();
+//          }   
+//     function updateEvent(){  
+             
+       
+//          deleteBtns.forEach((btn,index)=> {
+
+//             btn.addEventListener("click",()=>{
+//             liarr.splice(index,1);
+              //  console.log(liarr);  
+//             liItems[index].remove(); 
+              //  if(liItems[index].queryselector("text").textContent == inputBox.value)  {
+              //  clickbtntime == null;
+              //  updateEvent();
+// }    
+             
+//              });  
+             
+//              });
+            
+              
+//         editBtns.forEach((ebtn,ind)=>{
+//                ebtn.addEventListener("click",()=>{
+//                inputBox.value = liItems[ind].querySelector('.text').textContent;
+//                 clickbtntime = 2;
+//                 editindex = ind;
+                
+//             });
+//         });
+         
+    
+       
+//     }
+// }
        
